@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-
-import { dataSliceActions } from "./Store/data-store";
 import { fetchData } from "./Store/data-store";
-import "./App.module.css";
 import { useEffect } from "react";
+import Home from "./components/Home/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,7 +10,7 @@ function App() {
     dispatch(fetchData("https://restcountries.com/v3.1/all"));
   }, [dispatch]);
 
-  return <div className="App">hello</div>;
+  return <Home />;
 }
 
 export default App;

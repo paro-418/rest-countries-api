@@ -1,0 +1,12 @@
+.home {
+  background-color: #fafafa;
+  width: 100vw;
+  height: 100vh;
+}
+
+.forms {
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

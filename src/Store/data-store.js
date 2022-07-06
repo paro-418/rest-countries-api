@@ -7,7 +7,7 @@ const dataSlice = createSlice({
   reducers: {
     getData(state, actions) {
       state.countries = actions.payload;
-    }
+    },
   },
 });
 

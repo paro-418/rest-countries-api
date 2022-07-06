@@ -1,0 +1,8 @@
+.select {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.7rem 1rem;
+  color: rgb(61, 61, 61);
+  background-color: #fff;
+  box-shadow: 0rem 0rem 0.7rem -0.3rem #000;
+}

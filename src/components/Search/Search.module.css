@@ -1,0 +1,22 @@
+.search{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    column-gap: 0.7rem;
+    flex-basis: 35%;
+    box-shadow: 0rem 0rem 0.7rem -0.3rem #000;
+    border-radius: 0.3rem;
+    background-color: #fff;
+}
+
+.input{
+    flex-grow: 1;
+    border: none;
+    color:  #858585;
+    padding: 0.2rem 0;
+    font-size: 1rem;
+}
+
+.input::placeholder{
+    font-size: 0.7rem;
+}
