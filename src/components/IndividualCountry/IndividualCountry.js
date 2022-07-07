@@ -21,7 +21,6 @@ const extractedCountry = {
 const IndividualCountry = (props) => {
   const [loading, setLoading] = useState(true);
   const storeCountries = useSelector((state) => state.data.countries);
-  console.log(storeCountries);
   const countrySearched = useParams();
   const history = useHistory();
 
@@ -31,8 +30,6 @@ const IndividualCountry = (props) => {
       obj.name.common.trim().toLowerCase() ===
       countrySearched.country.trim().toLowerCase()
   );
-
-  console.log(countryToDisplay);
   useEffect(() => {
     if (countryToDisplay === undefined) return;
 

@@ -13,10 +13,16 @@
     flex-grow: 1;
     border: none;
     color:  #858585;
-    padding: 0.2rem 0;
+    padding: 0.2rem 0.5rem;
     font-size: 1rem;
 }
 
 .input::placeholder{
     font-size: 0.7rem;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
