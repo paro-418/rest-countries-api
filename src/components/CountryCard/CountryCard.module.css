@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  height: 18rem;
+  width: 14rem;
+  box-shadow: 0rem 0rem 1rem -0.3rem #00000091;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.flag {
+  width: 100%;
+  height: 50%;
+}
+
+.flagImage {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.text {
+  height: 50%;
+  padding: 1rem;
+}
+
+.name {
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.allInfo p{
+  font-weight: 700;
+}
+
+.allInfo p span{
+  font-weight: 500;
+}

@@ -16,10 +16,9 @@ export const fetchData = (url) => {
     const sendRequest = async () => {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
       dispatch(dataSlice.actions.getData(data));
     };
-    // sendRequest();
+    sendRequest();
   };
 };
 

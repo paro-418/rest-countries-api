@@ -1,0 +1,15 @@
+.countryContainer {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+  position: relative;
+}
+
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+}
