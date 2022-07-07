@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const NoPage = () => {
   const history = useHistory();
   const backHandler = () =>{
-    history.push('/home');
+    history.push("/rest-countries-api-with-color-theme-switcher-master/home");
   }
   return (
     <main className={classes.noPage}>

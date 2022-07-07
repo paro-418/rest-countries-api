@@ -11,7 +11,9 @@ const Search = () => {
   const searchCountry = (event) => {
     event.preventDefault();
     const countryTyped = textRef.current.value;
-    history.push(`/home/${countryTyped}`)
+    history.push(
+      `/rest-countries-api-with-color-theme-switcher-master/home/${countryTyped}`
+    );
   };
   return (
     <form onSubmit={searchCountry} className={classes.search}>
