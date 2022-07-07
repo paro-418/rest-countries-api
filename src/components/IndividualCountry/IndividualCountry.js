@@ -55,25 +55,24 @@ const IndividualCountry = (props) => {
     extractedCountry.flag = countryToDisplay.flags.svg;
     for (const lang of Object.entries(countryToDisplay.languages))
       extractedCountry.languages.push(lang[1]);
-
-    countryToDisplay.borders.forEach((border) => {
-      const found = storeCountries.find(
-        (country) =>
-          country.cca3.trim().toLowerCase() === border.trim().toLowerCase()
-      );
-      extractedCountry.border.push(found.name.common);
-    });
-
-    console.log(extractedCountry);
+    if (countryToDisplay.borders) {
+      countryToDisplay.borders.forEach((border) => {
+        const found = storeCountries.find(
+          (country) =>
+            country.cca3.trim().toLowerCase() === border.trim().toLowerCase()
+        );
+        extractedCountry.border.push(found.name.common);
+      });
+    }
     setLoading(false);
   }, [countryToDisplay]);
 
-  if (loadeding) return <p className={classes.Loading}>Loading...</p>;
+  if (loadeding) return <p className={classes.loading}>Loading...</p>;
 
   return (
     <main className={classes.individualCountry}>
       <div className={classes.btnContainer}>
-        <Button className={classes.backBtn}>
+        <Button className={classes.btn}>
           <MdKeyboardBackspace /> Back
         </Button>
       </div>
@@ -117,8 +116,8 @@ const IndividualCountry = (props) => {
               </p>
               <p>
                 Languages &nbsp; : &nbsp;{" "}
-                {extractedCountry.languages.map((lang) => (
-                  <span>{lang} &nbsp;</span>
+                {extractedCountry.languages.map((lang, index) => (
+                  <span key = {index}>{lang} &nbsp;</span>
                 ))}
               </p>
             </div>
@@ -126,9 +125,9 @@ const IndividualCountry = (props) => {
           <div className={classes.border}>
             <p>
               Border Countries&nbsp;:&nbsp;
-              {extractedCountry.border.map((border) => (
-                <span>{border}</span>
-              ))}
+              {extractedCountry.border.length > 0
+                ? extractedCountry.border.map((border, index) => <Button key={index} className={classes.btn}>{border}</Button>)
+                : <span>Not sharing border with any country</span>}
             </p>
           </div>
         </div>

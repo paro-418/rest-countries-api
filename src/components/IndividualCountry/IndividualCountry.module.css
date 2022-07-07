@@ -1,16 +1,25 @@
 .individualCountry {
   flex-grow: 1;
   padding: 2rem;
+  position: relative;
 }
 
 .loading {
-  font-size: 4rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .allInfo {
   display: flex;
   column-gap: 3rem;
   margin-top: 3rem;
+}
+
+.countryInfo {
+  width: 55%;
 }
 
 .flag {
@@ -25,7 +34,7 @@
 .btnContainer {
   margin-top: 2rem;
 }
-.backBtn {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,9 +44,10 @@
   border: 1px solid #c3c2c2;
   border-radius: 0.2rem;
   cursor: pointer;
+  color: rgb(53, 53, 53);
 }
 
-.backBtn:hover {
+.btn:hover {
   background-color: #e6e6e6;
 }
 .twoPart {
@@ -46,9 +56,16 @@
   column-gap: 4rem;
 }
 
+.part1{
+  width: 40%;
+}
+.part2 {
+  width: 50%;
+}
+
 .allInfo p {
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .allInfo span {
@@ -59,10 +76,20 @@
 .border {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .border p {
   display: flex;
   align-items: center;
-  column-gap: 1rem;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+}
+
+.borderName {
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.2rem;
+  border: 1px solid #c3c2c2;
 }
