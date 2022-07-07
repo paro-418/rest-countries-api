@@ -67,7 +67,7 @@ const IndividualCountry = (props) => {
   }, [countryToDisplay, countrySearched]);
 
   const backHandler = () => {
-    history.push("/rest-countries-api-with-color-theme-switcher-master/home");
+    history.push("/rest-countries-api/home");
   };
 
   const countryChangeHandler = (event) => {
@@ -85,13 +85,13 @@ const IndividualCountry = (props) => {
     extractedCountry.languages = [];
     setLoading(true);
     history.push(
-      `/rest-countries-api-with-color-theme-switcher-master/home/${borderClicked}`
+      `/rest-countries-api/home/${borderClicked}`
     );
   };
 
   if (storeCountries.length > 0 && countryToDisplay === undefined) {
     history.push(
-      "/rest-countries-api-with-color-theme-switcher-master/home/country/noCountryFound"
+      "/rest-countries-api/home/country/noCountryFound"
     );
   }
   if (loading) return <p className={classes.loading}>Loading...</p>;

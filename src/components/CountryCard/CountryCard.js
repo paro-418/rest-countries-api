@@ -8,7 +8,7 @@ const CountryCard = (props) => {
     const countryTargeted =
       event.currentTarget.childNodes[1].children[0].textContent;
     history.push(
-      `/rest-countries-api-with-color-theme-switcher-master/home/${countryTargeted}`
+      `/rest-countries-api/home/${countryTargeted}`
     );
   };
   return (

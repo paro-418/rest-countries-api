@@ -12,7 +12,7 @@ const Search = () => {
     event.preventDefault();
     const countryTyped = textRef.current.value;
     history.push(
-      `/rest-countries-api-with-color-theme-switcher-master/home/${countryTyped}`
+      `/rest-countries-api/home/${countryTyped}`
     );
   };
   return (

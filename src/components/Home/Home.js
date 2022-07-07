@@ -14,13 +14,13 @@ const Home = () => {
       <Header />
       <Switch>
         <Route
-          path="/rest-countries-api-with-color-theme-switcher-master"
+          path="/rest-countries-api"
           exact
         >
-          <Redirect to="/rest-countries-api-with-color-theme-switcher-master/home"></Redirect>
+          <Redirect to="/rest-countries-api/home"></Redirect>
         </Route>
         <Route
-          path="/rest-countries-api-with-color-theme-switcher-master/home"
+          path="/rest-countries-api/home"
           exact
         >
           <div className={classes.forms}>
@@ -30,7 +30,7 @@ const Home = () => {
           <CountryContainer />
         </Route>
         <Route
-          path="/rest-countries-api-with-color-theme-switcher-master/home/:country"
+          path="/rest-countries-api/home/:country"
           exact
         >
           <IndividualCountry />
