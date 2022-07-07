@@ -24,7 +24,7 @@
 
 .flag {
   box-shadow: 0rem 0rem 0.7rem -0.1rem #515151;
-  width: 35%;
+  width: 40%;
 }
 
 .flagImage {
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
   column-gap: 1.5rem;
 }
 

@@ -19,9 +19,10 @@ const extractedCountry = {
 };
 
 const IndividualCountry = (props) => {
-  const [loadeding, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const storeCountries = useSelector((state) => state.data.countries);
   const countrySearched = useParams();
+  console.log(countrySearched);
   const history = useHistory();
 
   // fetching country clicked ro show
@@ -31,7 +32,10 @@ const IndividualCountry = (props) => {
       countrySearched.country.trim().toLowerCase()
   );
 
+  console.log(countryToDisplay);
+
   useEffect(() => {
+    console.log(" i ran");
     if (countryToDisplay === undefined) return;
 
     // storing clicked country's data
@@ -65,14 +69,35 @@ const IndividualCountry = (props) => {
       });
     }
     setLoading(false);
-  }, [countryToDisplay]);
+  }, [countryToDisplay, countrySearched]);
 
-  if (loadeding) return <p className={classes.loading}>Loading...</p>;
+  const backHandler = () => {
+    history.push("/home");
+  };
+
+  const countryChangeHandler = (event) => {
+    const borderClicked = event.target.textContent;
+    // resetting state
+    extractedCountry.border = [];
+    extractedCountry.capital =
+      extractedCountry.flag =
+      extractedCountry.nativeName =
+      extractedCountry.region =
+      extractedCountry.subregion =
+      extractedCountry.tld =
+        undefined;
+    extractedCountry.currency = [];
+    extractedCountry.languages = [];
+    setLoading(true);
+    history.push(`/home/${borderClicked}`);
+  };
+
+  if (loading) return <p className={classes.loading}>Loading...</p>;
 
   return (
     <main className={classes.individualCountry}>
       <div className={classes.btnContainer}>
-        <Button className={classes.btn}>
+        <Button callFunction={backHandler} className={classes.btn}>
           <MdKeyboardBackspace /> Back
         </Button>
       </div>
@@ -117,7 +142,7 @@ const IndividualCountry = (props) => {
               <p>
                 Languages &nbsp; : &nbsp;{" "}
                 {extractedCountry.languages.map((lang, index) => (
-                  <span key = {index}>{lang} &nbsp;</span>
+                  <span key={index}>{lang} &nbsp;</span>
                 ))}
               </p>
             </div>
@@ -125,9 +150,19 @@ const IndividualCountry = (props) => {
           <div className={classes.border}>
             <p>
               Border Countries&nbsp;:&nbsp;
-              {extractedCountry.border.length > 0
-                ? extractedCountry.border.map((border, index) => <Button key={index} className={classes.btn}>{border}</Button>)
-                : <span>Not sharing border with any country</span>}
+              {extractedCountry.border.length > 0 ? (
+                extractedCountry.border.map((border, index) => (
+                  <Button
+                    callFunction={countryChangeHandler}
+                    key={index}
+                    className={classes.btn}
+                  >
+                    {border}
+                  </Button>
+                ))
+              ) : (
+                <span>Not sharing border with any country</span>
+              )}
             </p>
           </div>
         </div>
