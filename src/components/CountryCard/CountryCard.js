@@ -1,10 +1,13 @@
 import classes from "./CountryCard.module.css";
+import { useHistory } from "react-router-dom";
 
 const CountryCard = (props) => {
+  const history = useHistory();
+
   const countryClickHandler = (event) => {
     const countryTargeted =
       event.currentTarget.childNodes[1].children[0].textContent;
-    console.log(countryTargeted);
+    history.push(`/home/${countryTargeted}`);
   };
   return (
     <article className={classes.card} onClick={countryClickHandler}>

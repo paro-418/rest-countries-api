@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Nunito Sans", sans-serif;
   width: 100vw;
-  overflow-x: hidden;
 }
 
 code {
@@ -16,7 +15,6 @@ code {
 }
 #root {
   width: 100vw;
-  overflow-x: hidden;
 }
 
 *,

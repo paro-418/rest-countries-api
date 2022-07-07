@@ -1,0 +1,68 @@
+.individualCountry {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.loading {
+  font-size: 4rem;
+}
+
+.allInfo {
+  display: flex;
+  column-gap: 3rem;
+  margin-top: 3rem;
+}
+
+.flag {
+  box-shadow: 0rem 0rem 0.7rem -0.1rem #515151;
+  width: 35%;
+}
+
+.flagImage {
+  width: 100%;
+  height: 100%;
+}
+.btnContainer {
+  margin-top: 2rem;
+}
+.backBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  background-color: #fff;
+  border: 1px solid #c3c2c2;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.backBtn:hover {
+  background-color: #e6e6e6;
+}
+.twoPart {
+  margin-top: 1rem;
+  display: flex;
+  column-gap: 4rem;
+}
+
+.allInfo p {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.allInfo span {
+  font-weight: 500;
+  color: #303030;
+}
+
+.border {
+  display: flex;
+  align-items: center;
+}
+
+.border p {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
