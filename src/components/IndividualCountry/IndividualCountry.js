@@ -21,8 +21,8 @@ const extractedCountry = {
 const IndividualCountry = (props) => {
   const [loading, setLoading] = useState(true);
   const storeCountries = useSelector((state) => state.data.countries);
+  console.log(storeCountries);
   const countrySearched = useParams();
-  console.log(countrySearched);
   const history = useHistory();
 
   // fetching country clicked ro show
@@ -33,9 +33,7 @@ const IndividualCountry = (props) => {
   );
 
   console.log(countryToDisplay);
-
   useEffect(() => {
-    console.log(" i ran");
     if (countryToDisplay === undefined) return;
 
     // storing clicked country's data
@@ -92,6 +90,9 @@ const IndividualCountry = (props) => {
     history.push(`/home/${borderClicked}`);
   };
 
+  if (storeCountries.length > 0 && countryToDisplay === undefined) {
+    history.push("/home/country/noCountryFound");
+  }
   if (loading) return <p className={classes.loading}>Loading...</p>;
 
   return (

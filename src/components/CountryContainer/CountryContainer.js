@@ -1,5 +1,4 @@
 import classes from "./CountryContainer.module.css";
-import store from "../../Store/Store";
 import { useSelector } from "react-redux";
 import CountryCard from "../CountryCard/CountryCard";
 
