@@ -84,7 +84,7 @@ const IndividualCountry = (props) => {
   }, [countryToDisplay, countrySearched]);
 
   const backHandler = () => {
-    history.push("/rest-countries-api/home");
+    history.push("/home");
   };
 
 
@@ -92,11 +92,11 @@ const IndividualCountry = (props) => {
     const borderClicked = event.target.textContent;
     // resetting state
     resetData();
-    history.push(`/rest-countries-api/home/${borderClicked}`);
+    history.push(`/home/${borderClicked}`);
   };
 
   if (storeCountries.length > 0 && countryToDisplay === undefined) {
-    history.push("/rest-countries-api/home/country/noCountryFound");
+    history.push("/home/country/noCountryFound");
   }
   if (loading)
     return (

@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const NoPage = () => {
   const history = useHistory();
   const backHandler = () =>{
-    history.push("/rest-countries-api/home");
+    history.push("/home");
   }
   return (
     <main className={`${classes.noPage} ${classes.noPageDark}`}>
