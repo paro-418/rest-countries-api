@@ -17,6 +17,10 @@
   transform: translate(-50%, -50%);
 }
 
+.loadingDark{
+  color: #fff !important;
+}
+
 .allInfo {
   display: flex;
   column-gap: 3rem;
@@ -49,9 +53,11 @@
   border: 1px solid #c3c2c2;
   border-radius: 0.2rem;
   cursor: pointer;
-  color: rgb(53, 53, 53);
 }
-
+.btnDark{
+  color: #fff !important;
+  background-color: #2b3945 !important;
+}
 .btn:hover {
   background-color: #e6e6e6;
 }

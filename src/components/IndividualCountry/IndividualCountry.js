@@ -23,6 +23,7 @@ const IndividualCountry = (props) => {
   const storeCountries = useSelector((state) => state.data.countries);
   const countrySearched = useParams();
   const history = useHistory();
+  const light = useSelector((state) => state.theme.light);
 
   // fetching country clicked ro show
   const countryToDisplay = storeCountries.find(
@@ -30,8 +31,22 @@ const IndividualCountry = (props) => {
       obj.name.common.trim().toLowerCase() ===
       countrySearched.country.trim().toLowerCase()
   );
+  const resetData = () => {
+    extractedCountry.border = [];
+    extractedCountry.capital =
+      extractedCountry.flag =
+      extractedCountry.nativeName =
+      extractedCountry.region =
+      extractedCountry.subregion =
+      extractedCountry.tld =
+        undefined;
+    extractedCountry.currency = [];
+    extractedCountry.languages = [];
+    setLoading(true);
+  };
   useEffect(() => {
     if (countryToDisplay === undefined) return;
+    console.log("i'm running");
 
     // storing clicked country's data
     extractedCountry.nativeName = countryToDisplay.name.common;
@@ -64,76 +79,97 @@ const IndividualCountry = (props) => {
       });
     }
     setLoading(false);
+
+    return resetData;
   }, [countryToDisplay, countrySearched]);
 
   const backHandler = () => {
     history.push("/rest-countries-api/home");
   };
 
+
   const countryChangeHandler = (event) => {
     const borderClicked = event.target.textContent;
     // resetting state
-    extractedCountry.border = [];
-    extractedCountry.capital =
-      extractedCountry.flag =
-      extractedCountry.nativeName =
-      extractedCountry.region =
-      extractedCountry.subregion =
-      extractedCountry.tld =
-        undefined;
-    extractedCountry.currency = [];
-    extractedCountry.languages = [];
-    setLoading(true);
-    history.push(
-      `/rest-countries-api/home/${borderClicked}`
-    );
+    resetData();
+    history.push(`/rest-countries-api/home/${borderClicked}`);
   };
 
   if (storeCountries.length > 0 && countryToDisplay === undefined) {
-    history.push(
-      "/rest-countries-api/home/country/noCountryFound"
-    );
+    history.push("/rest-countries-api/home/country/noCountryFound");
   }
-  if (loading) return <p className={classes.loading}>Loading...</p>;
+  if (loading)
+    return (
+      <p className={`${classes.loading} ${!light ? classes.loadingDark : ""}`}>
+        Loading...
+      </p>
+    );
 
   return (
-    <main className={`${classes.individualCountry} ${classes.IndividualCountryDark}`}>
-      <div className={`${classes.btnContainer} ${classes.btnContainerDark}`}>
-        <Button callFunction={backHandler} className={`${classes.btn} ${classes.btnDark}`}>
+    <main
+      className={`${classes.individualCountry} ${
+        !light ? classes.IndividualCountryDark : ""
+      }`}
+    >
+      <div
+        className={`${classes.btnContainer} ${
+          !light ? classes.btnContainerDark : ""
+        }`}
+      >
+        <Button
+          callFunction={backHandler}
+          className={`${classes.btn} ${!light ? classes.btnDark : ""}`}
+        >
           <MdKeyboardBackspace /> Back
         </Button>
       </div>
-      <div className={`${classes.allInfo} ${classes.allInfoDark}`}>
+      <div
+        className={`${classes.allInfo} ${!light ? classes.allInfoDark : ""}`}
+      >
         <div className={classes.flag}>
           <img className={classes.flagImage} src={extractedCountry.flag} />
         </div>
         <div className={classes.countryInfo}>
-          <h1 className={`${classes.name} ${classes.nameDark}`}>{extractedCountry.nativeName}</h1>
+          <h1 className={`${classes.name} ${!light ? classes.nameDark : ""}`}>
+            {extractedCountry.nativeName}
+          </h1>
           <div className={classes.twoPart}>
             <div className={classes.part1}>
-              <p className={`${classes.p} ${classes.pDark}`}>
+              <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
                 Native Name &nbsp; : &nbsp;
-                <span className={`${classes.span} ${classes.spanDark}`}>
+                <span
+                  className={`${classes.span} ${
+                    !light ? classes.spanDark : ""
+                  }`}
+                >
                   {extractedCountry.nativeName}
                 </span>
               </p>
-              <p className={`${classes.p} ${classes.pDark}`}>
+              <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
                 Population &nbsp; : &nbsp;
-                <span className={`${classes.span} ${classes.spanDark}`}>
+                <span
+                  className={`${classes.span} ${
+                    !light ? classes.spanDark : ""
+                  }`}
+                >
                   {extractedCountry.population}
                 </span>
               </p>
-              <p className={`${classes.p} ${classes.pDark}`}>
+              <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
                 Region &nbsp; : &nbsp;
-                <span className={`${classes.span} ${classes.spanDark}`}>
+                <span
+                  className={`${classes.span} ${
+                    !light ? classes.spanDark : ""
+                  }`}
+                >
                   {extractedCountry.region}
                 </span>
               </p>
-              <p className={`${classes.p} ${classes.pDark}`}>
+              <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
                 Sub region &nbsp; : &nbsp;
                 <span>{extractedCountry.subregion}</span>
               </p>
-              <p className={`${classes.p} ${classes.pDark}`}>
+              <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
                 Capital &nbsp; : &nbsp;
                 <span>{extractedCountry.capital}</span>
               </p>
@@ -165,14 +201,16 @@ const IndividualCountry = (props) => {
             </div>
           </div>
           <div className={classes.border}>
-            <p className={`${classes.p}`}>
+            <p className={`${classes.p} ${!light ? classes.pDark : ""}`}>
               Border Countries&nbsp;:&nbsp;
               {extractedCountry.border.length > 0 ? (
                 extractedCountry.border.map((border, index) => (
                   <Button
                     callFunction={countryChangeHandler}
                     key={index}
-                    className={`${classes.btn} ${classes.btnDark}`}
+                    className={`${classes.btn} ${
+                      !light ? classes.btnDark : ""
+                    }`}
                   >
                     {border}
                   </Button>
