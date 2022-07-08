@@ -39,7 +39,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- [React](https://reactjs.org/) - JS library
+- React JS
 - CSS Modules
 
 ### What I learned
