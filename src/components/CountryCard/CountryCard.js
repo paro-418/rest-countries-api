@@ -8,7 +8,7 @@ const CountryCard = (props) => {
   const countryClickHandler = (event) => {
     const countryTargeted =
       event.currentTarget.childNodes[1].children[0].textContent;
-    history.push(`/home/${countryTargeted}`);
+    history.push(`/rest-countries-api/home/${countryTargeted}`);
   };
   return (
     <article

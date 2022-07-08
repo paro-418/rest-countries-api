@@ -15,17 +15,17 @@ const Home = () => {
     <main className={`${classes.home} ${!light ? classes.homeDark : ""}`}>
       <Header />
       <Switch>
-        <Route path="/" exact>
-          <Redirect to="/home"></Redirect>
+        <Route path="/rest-countries-api" exact>
+          <Redirect to="/rest-countries-api/home"></Redirect>
         </Route>
-        <Route path="/home" exact>
+        <Route path="/rest-countries-api/home" exact>
           <div className={classes.forms}>
             <Search />
             <DropMenu />
           </div>
           <CountryContainer />
         </Route>
-        <Route path="/home/:country" exact>
+        <Route path="/rest-countries-api/home/:country" exact>
           <IndividualCountry />
         </Route>
         <Route path="*">

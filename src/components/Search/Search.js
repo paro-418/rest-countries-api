@@ -12,7 +12,7 @@ const Search = () => {
   const searchCountry = (event) => {
     event.preventDefault();
     const countryTyped = textRef.current.value;
-    history.push(`/home/${countryTyped}`);
+    history.push(`/rest-countries-api/home/${countryTyped}`);
   };
   return (
     <form

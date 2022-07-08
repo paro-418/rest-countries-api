@@ -46,7 +46,6 @@ const IndividualCountry = (props) => {
   };
   useEffect(() => {
     if (countryToDisplay === undefined) return;
-    console.log("i'm running");
 
     // storing clicked country's data
     extractedCountry.nativeName = countryToDisplay.name.common;
@@ -84,7 +83,7 @@ const IndividualCountry = (props) => {
   }, [countryToDisplay, countrySearched]);
 
   const backHandler = () => {
-    history.push("/home");
+    history.push("/rest-countries-api/home");
   };
 
 
@@ -92,11 +91,11 @@ const IndividualCountry = (props) => {
     const borderClicked = event.target.textContent;
     // resetting state
     resetData();
-    history.push(`/home/${borderClicked}`);
+    history.push(`/rest-countries-api/home/${borderClicked}`);
   };
 
   if (storeCountries.length > 0 && countryToDisplay === undefined) {
-    history.push("/home/country/noCountryFound");
+    history.push("/rest-countries-api/home/country/noCountryFound");
   }
   if (loading)
     return (
