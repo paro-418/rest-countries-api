@@ -97,67 +97,82 @@ const IndividualCountry = (props) => {
   if (loading) return <p className={classes.loading}>Loading...</p>;
 
   return (
-    <main className={classes.individualCountry}>
-      <div className={classes.btnContainer}>
-        <Button callFunction={backHandler} className={classes.btn}>
+    <main className={`${classes.individualCountry} ${classes.IndividualCountryDark}`}>
+      <div className={`${classes.btnContainer} ${classes.btnContainerDark}`}>
+        <Button callFunction={backHandler} className={`${classes.btn} ${classes.btnDark}`}>
           <MdKeyboardBackspace /> Back
         </Button>
       </div>
-      <div className={classes.allInfo}>
+      <div className={`${classes.allInfo} ${classes.allInfoDark}`}>
         <div className={classes.flag}>
           <img className={classes.flagImage} src={extractedCountry.flag} />
         </div>
         <div className={classes.countryInfo}>
-          <h1 className={classes.name}>{extractedCountry.nativeName}</h1>
+          <h1 className={`${classes.name} ${classes.nameDark}`}>{extractedCountry.nativeName}</h1>
           <div className={classes.twoPart}>
             <div className={classes.part1}>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Native Name &nbsp; : &nbsp;
-                <span>{extractedCountry.nativeName}</span>
+                <span className={`${classes.span} ${classes.spanDark}`}>
+                  {extractedCountry.nativeName}
+                </span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Population &nbsp; : &nbsp;
-                <span>{extractedCountry.population}</span>
+                <span className={`${classes.span} ${classes.spanDark}`}>
+                  {extractedCountry.population}
+                </span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Region &nbsp; : &nbsp;
-                <span>{extractedCountry.region}</span>
+                <span className={`${classes.span} ${classes.spanDark}`}>
+                  {extractedCountry.region}
+                </span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Sub region &nbsp; : &nbsp;
                 <span>{extractedCountry.subregion}</span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Capital &nbsp; : &nbsp;
                 <span>{extractedCountry.capital}</span>
               </p>
             </div>
             <div className={classes.part2}>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Top Level Domain &nbsp; : &nbsp;{" "}
-                <span>{extractedCountry.tld}</span>
+                <span className={`${classes.span} ${classes.spanDark}`}>
+                  {extractedCountry.tld}
+                </span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Currencies &nbsp; : &nbsp;{" "}
-                <span>{extractedCountry.currency[0][1].name}</span>
+                <span className={`${classes.span} ${classes.spanDark}`}>
+                  {extractedCountry.currency[0][1].name}
+                </span>
               </p>
-              <p>
+              <p className={`${classes.p} ${classes.pDark}`}>
                 Languages &nbsp; : &nbsp;{" "}
                 {extractedCountry.languages.map((lang, index) => (
-                  <span key={index}>{lang} &nbsp;</span>
+                  <span
+                    className={`${classes.span} ${classes.spanDark}`}
+                    key={index}
+                  >
+                    {lang} &nbsp;
+                  </span>
                 ))}
               </p>
             </div>
           </div>
           <div className={classes.border}>
-            <p>
+            <p className={`${classes.p}`}>
               Border Countries&nbsp;:&nbsp;
               {extractedCountry.border.length > 0 ? (
                 extractedCountry.border.map((border, index) => (
                   <Button
                     callFunction={countryChangeHandler}
                     key={index}
-                    className={classes.btn}
+                    className={`${classes.btn} ${classes.btnDark}`}
                   >
                     {border}
                   </Button>

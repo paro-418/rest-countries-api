@@ -15,7 +15,10 @@ const CountryContainer = () => {
     return <p className={classes.loading}>Loading...</p>;
   if (storeCountries.length === 0 && !loading)
     return (
-      <p className={classes.noData}>Couldn't found countries from selected region 😕. Please Try different region.</p>
+      <p className={classes.noData}>
+        Couldn't found countries from selected region 😕. Please Try different
+        region.
+      </p>
     );
   return (
     <main className={classes.countryContainer}>

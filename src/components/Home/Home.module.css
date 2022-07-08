@@ -6,6 +6,10 @@
   min-height: 100vh;
 }
 
+.homeDark{
+  background-color: #202c37 !important;
+}
+
 .forms {
   padding: 1.5rem 3rem;
   display: flex;

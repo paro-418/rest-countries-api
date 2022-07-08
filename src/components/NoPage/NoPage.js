@@ -9,8 +9,8 @@ const NoPage = () => {
     history.push("/rest-countries-api/home");
   }
   return (
-    <main className={classes.noPage}>
-      <h1 className={classes.heading}> No Country Found 😕.</h1>{" "}
+    <main className={`${classes.noPage} ${classes.noPageDark}`}>
+      <h1 className={classes.heading}> No Country Found 😕.</h1>
       <h1 className={classes.heading}>
         Make sure country's name is correctly spelled.
       </h1>

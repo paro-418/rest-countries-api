@@ -1,9 +1,10 @@
 import classes from "./DropMenu.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { regionWiseFetch } from "../../Store/data-store";
 
 const DropMenu = () => {
   const dispatch = useDispatch();
+  const light = useSelector((state) => state.theme.light);
 
   const regionSelectedHandler = (event) => {
     const countrySelected = event.target.value;
@@ -12,7 +13,10 @@ const DropMenu = () => {
     );
   };
   return (
-    <select onChange={regionSelectedHandler} className={classes.select}>
+    <select
+      onChange={regionSelectedHandler}
+      className={`${classes.select} ${!light ? classes.selectDark : ""}`}
+    >
       <option className={classes.option} value="#">
         Filter by region
       </option>

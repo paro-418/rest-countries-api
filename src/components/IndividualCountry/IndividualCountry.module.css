@@ -4,6 +4,11 @@
   position: relative;
 }
 
+.individualCountryDark{
+  background-color: #202c37 !important;
+
+}
+
 .loading {
   font-size: 3rem;
   position: absolute;
@@ -63,14 +68,30 @@
   width: 50%;
 }
 
-.allInfo p {
+.name{
+  color: #000;
+}
+
+.nameDark{
+  color:  hsl(0, 0%, 100%);
+}
+
+.allInfo .p {
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
-.allInfo span {
+.allInfo .pDark{
+  color:  #ffffff !important;
+}
+
+.allInfo .span {
   font-weight: 500;
   color: #303030;
+}
+
+.allInfo .spanDark{
+  color:  hsl(0, 0%, 100%) !important;
 }
 
 .border {

@@ -1,13 +1,16 @@
 .card {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   height: 18rem;
   width: 14rem;
   box-shadow: 0rem 0rem 1rem -0.3rem #00000091;
   border-radius: 0.3rem;
   overflow: hidden;
   cursor: pointer;
+}
+
+.cardDark {
+  background-color: #2b3945 !important;
 }
 
 .flag {
@@ -18,7 +21,6 @@
 .flagImage {
   width: 100%;
   height: 100%;
-  
 }
 
 .text {
@@ -31,11 +33,16 @@
   text-transform: capitalize;
   margin-bottom: 0.5rem;
 }
-
-.allInfo p{
+.nameDark {
+  color: #fff;
+}
+.p {
   font-weight: 700;
 }
+.pDark {
+  color: #fff;
+}
 
-.allInfo p span{
+.allInfo p span {
   font-weight: 500;
 }
